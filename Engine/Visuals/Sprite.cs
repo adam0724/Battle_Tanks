@@ -6,6 +6,9 @@ using OpenTK.Graphics.OpenGL;
 
 namespace Battle_Tanks.Visuals
 {
+	/// <summary>
+	/// O tutaj komentarz dodalem
+	/// </summary>
 	public class Sprite
 	{
 		public bool destroyWhenAniEnd;
