@@ -1,0 +1,7 @@
+C:\Users\orcwarrior\Dysk Google\inżOprogramowania\BattleTanks_Src\Engine\bin\Release\Engine.dll
+C:\Users\orcwarrior\Dysk Google\inżOprogramowania\BattleTanks_Src\Engine\bin\Release\Engine.pdb
+C:\Users\orcwarrior\Dysk Google\inżOprogramowania\BattleTanks_Src\Engine\bin\Release\OpenTK.dll
+C:\Users\orcwarrior\Dysk Google\inżOprogramowania\BattleTanks_Src\Engine\bin\Release\QuickFont.dll
+C:\Users\orcwarrior\Dysk Google\inżOprogramowania\BattleTanks_Src\Engine\bin\Release\QuickFont.pdb
+C:\Users\orcwarrior\Dysk Google\inżOprogramowania\BattleTanks_Src\Engine\obj\Release\Engine.dll
+C:\Users\orcwarrior\Dysk Google\inżOprogramowania\BattleTanks_Src\Engine\obj\Release\Engine.pdb
