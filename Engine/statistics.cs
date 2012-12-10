@@ -1,8 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using QuickFont;
 
-namespace Battle_Tanks.Engine
+namespace Battle_Tanks
 {
 	public class statistics
 	{

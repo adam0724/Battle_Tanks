@@ -1,8 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Drawing;
 
-namespace Battle_Tanks.Engine
+namespace Battle_Tanks.Objects
 {
 	public static class staticObjectFactory
 	{

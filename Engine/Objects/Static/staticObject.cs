@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-
-namespace Battle_Tanks.Engine
+using System.Drawing;
+namespace Battle_Tanks.Objects
 {
-	public class staticObject
+	public class staticObject : virtualObject
 	{
 		public staticObject(Point pos, eStaticObjType objTyp)
 		{
@@ -64,10 +64,16 @@ namespace Battle_Tanks.Engine
 			}
 		}
 
-		public virtual void Destroy()
+		public void Destroy()
+		{
+			//call: Destroy witch proprer rectangle
+			throw new NotImplementedException();
+		}
+		public virtual void Destroy(Rectangle destroyerBBox)
 		{
 			throw new NotImplementedException();
 		}
+		
 
 		public override void Update()
 		{

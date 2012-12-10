@@ -2,7 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using OpenTK;
-namespace Battle_Tanks.Engine
+using OpenTK.Graphics.OpenGL;
+using Battle_Tanks.Menu;
+using Battle_Tanks.Objects;
+using Battle_Tanks.Sound;
+using Battle_Tanks.Visuals;
+using Battle_Tanks.Time;
+
+namespace Battle_Tanks
 {
 	public class Engine : OpenTK.GameWindow
 	{
@@ -23,8 +30,8 @@ namespace Battle_Tanks.Engine
 		/// (?)(TODO)
 		/// </summary>
 		public Engine()
+			: base(1024,768)
 		{
-			throw new NotImplementedException();
 		}
 
 		/// <summary>
@@ -101,23 +108,45 @@ namespace Battle_Tanks.Engine
 		{
 			throw new NotImplementedException();
 		}
+
+		protected override void OnLoad(EventArgs e)
+		{
+			base.OnLoad(e);
+			_initMatrix();
+			GL.Enable(EnableCap.DepthTest);
+			GL.Enable(EnableCap.Texture2D);
+			GL.Enable(EnableCap.Blend);
+			//Ustawiamy kolor czyszczenia(tla):
+			GL.ClearColor(OpenTK.Graphics.Color4.CadetBlue);
+		}
+
 		/// <summary>
 		/// Funkcja nadpisuj¹ca t¹ sam¹ funkcje klasy GameWindow ma za zadanie zale¿nie od obecnego stanu gry:
 		/// *MENU - wywo³aæ Render menuManagera
 		/// *GAME - wywo³aæ Render wszystkich statycznycch obiektów mapy, pojazdów gracza i wroga a na koniec pocisków i power-upów.
 		/// </summary>
-		public override void onRender()
+		protected override void OnRenderFrame(FrameEventArgs e)
 		{
-			throw new NotImplementedException();
+			base.OnRenderFrame(e);
+			GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
+
+			GL.Begin(BeginMode.Quads);
+			GL.Color3(1.0, .0, 1.0);
+			GL.Vertex2(100 ,40);
+			GL.Vertex2(100 ,240);   
+			GL.Vertex2(300 ,240);
+			GL.Vertex2(300 ,40 );
+			GL.End();
+			SwapBuffers();
 		}
 		/// <summary>
 		/// Funkcja nadpisuj¹ca t¹ sam¹ funkcje klasy GameWindow ma za zadanie zale¿nie od obecnego stanu gry:
 		/// *MENU - wywo³aæ Render menuManagera
 		/// *GAME - wywo³aæ Render wszystkich statycznycch obiektów mapy, pojazdów gracza i wroga a na koniec pocisków i power-upów.
 		/// </summary>
-		public override void onUpdate()
+		protected override void OnUpdateFrame(FrameEventArgs e)
 		{
-			throw new NotImplementedException();
+			base.OnUpdateFrame(e);
 		}
 		/// <summary>
 		/// Metoda utworzy odpowiedni obiekt dla danego jako argument piksela
@@ -128,7 +157,32 @@ namespace Battle_Tanks.Engine
 		{
 			throw new NotImplementedException();
 		}
+		/// <summary>
+		/// Inicjalizacja macierzu przeksztalceñ
+		/// wymagane do prawidlowego wyœwietlania obieków
+		/// graficznych.
+		/// </summary>
+		private void _initMatrix()
+		{
+			int[] viewPort = new int[4];
 
+			GL.GetInteger(GetPName.Viewport, viewPort);
+			GL.MatrixMode(MatrixMode.Projection);
+			GL.PushMatrix();
+			GL.LoadIdentity();
+
+			GL.Ortho(viewPort[0], viewPort[0] + viewPort[2], viewPort[1] + viewPort[3], viewPort[1], -1, 1);
+			GL.MatrixMode(MatrixMode.Modelview);
+			GL.PushMatrix();
+			GL.LoadIdentity();
+			//GL.Translate(0.375, 0.375, 0.0);
+			GL.Translate(0.0, 0.0, 0.0);
+			GL.PushAttrib(AttribMask.DepthBufferBit);
+		}
+
+		/// <summary>
+		/// Metoda wywolana przy zakonczeniu gry
+		/// </summary>
 		private void _gameOver()
 		{
 			throw new NotImplementedException();
@@ -158,5 +212,19 @@ namespace Battle_Tanks.Engine
 		{
 			throw new NotImplementedException();
 		}
+		// Entry Point (Main):
+		[STAThread]
+		static void Main()
+		{
+			using (Engine game = new Engine())
+			{
+				game.VSync = VSyncMode.Adaptive;
+				game.Title = "Battle Tanks";
+				game.Run(60);
+			}
+		}
 	}
+
+
+
 }

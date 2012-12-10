@@ -1,8 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Drawing;
+using Battle_Tanks.Visuals;
 
-namespace Battle_Tanks.Engine
+namespace Battle_Tanks.Objects
 {
 	public abstract class virtualObject
 	{

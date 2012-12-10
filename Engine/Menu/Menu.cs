@@ -1,15 +1,17 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Battle_Tanks;
+using Battle_Tanks.Visuals;
 
-namespace Battle_Tanks.Engine
+namespace Battle_Tanks.Menu
 {
 	public class Menu
 	{
 		private List <Sprite> _backgroundVisuals;
 		menuItem selectedItem;
 
-		public List<menuItems> items
+		public List<menuItem> items
 		{
 			get
 			{

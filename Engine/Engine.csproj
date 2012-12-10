@@ -6,7 +6,7 @@
     <RootNamespace>Battle_Tanks.Engine</RootNamespace>
     <AssemblyName>Engine</AssemblyName>
     <ProjectGuid>{F552C095-CF3A-42F0-A8B3-DDB213854AEA}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <OutputType>WinExe</OutputType>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -45,9 +45,12 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="OpenTK">
-      <HintPath>..\..\..\..\Projekty\Programowanie\PacMan na silniku\CookieMonster\CookieMonster\bin\Release\OpenTK.dll</HintPath>
+      <HintPath>bin\Debug\OpenTK.dll</HintPath>
     </Reference>
     <Reference Include="OpenTK.Compatibility">
       <HintPath>..\..\..\..\Projekty\Programowanie\PacMan na silniku\CookieMonster\CookieMonster\bin\Release\OpenTK.Compatibility.dll</HintPath>
@@ -56,7 +59,7 @@
       <HintPath>..\..\..\..\Projekty\Programowanie\PacMan na silniku\CookieMonster\CookieMonster\bin\Release\OpenTK.GLControl.dll</HintPath>
     </Reference>
     <Reference Include="QuickFont">
-      <HintPath>..\..\..\..\Projekty\Programowanie\PacMan na silniku\CookieMonster\CookieMonster\bin\Release\QuickFont.dll</HintPath>
+      <HintPath>E:\Projekty\Programowanie\PacMan na silniku\CookieMonster\CookieMonster\bin\Release\QuickFont.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -84,8 +87,6 @@
     <Compile Include="Objects\Dynamic\Weapon.cs" />
     <Compile Include="eGameState.cs" />
     <Compile Include="Time\eUnits.cs" />
-    <Compile Include="Sound\Visuals\Texture.cs" />
-    <Compile Include="Sound\Visuals\Sprite.cs" />
     <Compile Include="mapContants.cs" />
     <Compile Include="Sound\soundManager.cs" />
     <Compile Include="Sound\BASS.cs" />
@@ -99,6 +100,8 @@
     <Compile Include="Menu\menuOpen.cs" />
     <Compile Include="Menu\menuItem.cs" />
     <Compile Include="Objects\Dynamic\eEnemyTankType.cs" />
+    <Compile Include="Visuals\Sprite.cs" />
+    <Compile Include="Visuals\Texture.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

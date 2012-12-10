@@ -1,10 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Drawing;
 
-namespace Battle_Tanks.Engine
+namespace Battle_Tanks.Objects
 {
-	public class staticObjectGroup
+	public class staticObjectGroup : staticObject
 	{
 		List <staticObject> objsGroup;
 
@@ -29,6 +30,7 @@ namespace Battle_Tanks.Engine
 		}
 
 		public staticObjectGroup(Point pos, eStaticObjType objType, eSOBQuarters quarters)
+		: base(pos,objType)
 		{
 			throw new NotImplementedException();
 		}

@@ -1,10 +1,12 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Drawing;
+using Battle_Tanks.Time;
 
-namespace Battle_Tanks.Engine
+namespace Battle_Tanks.Objects
 {
-	public abstract class Vehicle
+	public abstract class Vehicle : dynamicObject
 	{
 		protected int hp;
 		protected int hpMax;
@@ -43,7 +45,8 @@ namespace Battle_Tanks.Engine
 			}
 		}
 
-		protected Vehicle(Point pos, float speed, eDir dir, int hitPoints, Projectile weapon)
+		protected Vehicle(Point pos, float speed, eDir dir, int hitPoints, Weapon weapon)
+		: base(pos,speed,dir)
 		{
 			throw new NotImplementedException();
 		}

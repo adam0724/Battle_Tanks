@@ -1,10 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Drawing;
 
-namespace Battle_Tanks.Engine
+namespace Battle_Tanks.Objects
 {
-	public class Enemy
+	public class Enemy : Vehicle
 	{
 		public override void Kill()
 		{
@@ -22,6 +23,7 @@ namespace Battle_Tanks.Engine
 		}
 
 		public Enemy(Point pos, float speed, eDir dir, int hitPoints, Weapon weapon)
+			: base(pos,speed,dir,hitPoints,weapon)
 		{
 			throw new NotImplementedException();
 		}

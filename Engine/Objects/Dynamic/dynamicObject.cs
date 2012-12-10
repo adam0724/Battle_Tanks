@@ -1,10 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Drawing;
 
-namespace Battle_Tanks.Engine
+namespace Battle_Tanks.Objects
 {
-	public abstract class dynamicObject
+	public abstract class dynamicObject : virtualObject
 	{
 		protected float speed;
 

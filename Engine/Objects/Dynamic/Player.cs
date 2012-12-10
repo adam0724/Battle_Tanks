@@ -1,10 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Drawing;
 
-namespace Battle_Tanks.Engine
+namespace Battle_Tanks.Objects
 {
-	public class Player
+	public class Player : Vehicle
 	{
 		private int _playerID;
 		private int _oldHp;
@@ -13,8 +14,7 @@ namespace Battle_Tanks.Engine
 		{
 			throw new NotImplementedException();
 		}
-
-		public void KeyEvent(KeyEventArgs arg)
+		public void KeyEvent(OpenTK.KeyPressEventArgs arg)
 		{
 			throw new NotImplementedException();
 		}
@@ -25,6 +25,7 @@ namespace Battle_Tanks.Engine
 		}
 
 		public Player(int ID, Point pos, float speed, eDir dir, int hitPoints, Weapon weapon)
+		: base(pos,speed,dir,hitPoints,weapon)
 		{
 			throw new NotImplementedException();
 		}
